@@ -36,11 +36,11 @@ pipeline {
                         sed -i "s/IMAGE_VERSION/${params.version}/g" values-${environment}.yaml
                         cat values-${environment}.yaml
                         helm upgrade --install $COMPONENT -n $PROJECT -f values-${environment}.yaml .
-"""
+                       """
                     }
                 }
             }
-        }m
+        }
         /* stage('Deploy') {
             steps {
                 script{
